@@ -54,3 +54,13 @@ def N4602_2():
     matches = [match.group() for match in finditer(pattern, s)]
     print(len(max(matches, key=len))/2)
 
+def N17563():
+    with open("txts/24_17563.txt") as f:
+        s = f.read().strip()
+
+    number = r'[7-9][07-9]*'
+    pattern = rf'({number}[*-])+{number}'
+    matches = [match.group() for match in finditer(pattern, s)]
+    print(len(max(matches, key=len)))
+
+N17563()
